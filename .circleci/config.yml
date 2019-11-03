@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    branches:
+      only: master
+    steps:
+      - checkout
+      - run: docker build -t "tmichaud/produce_demo:$(git describe --abbrev=0 --tags)" -t tmichaud/produce_demo:latest .
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker push tmichaud/produce_demo
+
