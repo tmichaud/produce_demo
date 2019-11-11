@@ -23,8 +23,6 @@ workflows:
 jobs:
   build:
     machine: true
-    branches:
-      only: master
     steps:
       - checkout
       - run: docker build -t "tmichaud/produce_demo:$(git describe --abbrev=0 --tags)" -t tmichaud/produce_demo:latest .
