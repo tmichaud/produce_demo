@@ -2,6 +2,9 @@
 # Stage 1
 FROM golang:latest as builder
 
+# Turn off modules
+RUN go env -w GO111MODULE="off"
+
 # Copy in the go files 
 COPY . /go/src/produce_demo
 
