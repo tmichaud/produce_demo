@@ -2,17 +2,18 @@
 # Stage 1
 FROM golang:latest as builder
 
-# Turn off modules
-RUN go env -w GO111MODULE="off"
-
 # Copy in the go files 
 COPY . /go/src/produce_demo
 
 # Set up the working directory
 WORKDIR /go/src/produce_demo
 
+# Setup the module
+RUN go mod init example.com/produce_demo
+RUN go mod tidy
+
 # Get Echo
-RUN go get github.com/labstack/echo
+RUN go get github.com/labstack/echo/v4
 
 # Build the files
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -v -o /out/echo_app
