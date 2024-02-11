@@ -2,7 +2,7 @@
 package db
 
 import (
-	"produce_demo/common"
+	"example.com/produce_demo/common"
 	"sort"
 	"strings"
 	"testing"

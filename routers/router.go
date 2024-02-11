@@ -1,9 +1,9 @@
 package router
 
 import (
-	"produce_demo/api"
+	"example.com/produce_demo/api"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 // Create a new Echo and add the api routes

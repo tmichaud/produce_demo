@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 
-	"produce_demo/common"
-	"produce_demo/db"
+	"example.com/produce_demo/common"
+	"example.com/produce_demo/db"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 // FetchMsg return structure - used by FetchProduce and FetchProduceByProduceCode

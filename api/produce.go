@@ -1,9 +1,9 @@
 package api
 
 import (
-	"produce_demo/api/handlers"
+	"example.com/produce_demo/api/handlers"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 func Produce(e *echo.Echo) {
