@@ -25,7 +25,7 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: docker build -t "tmichaud/produce_demo:$(git describe --abbrev=0 --tags)" -t tmichaud/produce_demo:latest .
+      - run: docker build -t "tmichaud/produce_demo:$(git describe --abbrev=0 --tags)" .
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker push tmichaud/produce_demo
 
